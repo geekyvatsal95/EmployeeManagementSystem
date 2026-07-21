@@ -1,10 +1,36 @@
 # Employee Management System (REST API)
 
+![C++](https://img.shields.io/badge/C%2B%2B-17-blue)
+![Crow](https://img.shields.io/badge/Framework-Crow-green)
+![SQLite](https://img.shields.io/badge/Database-SQLite-blue)
+![CMake](https://img.shields.io/badge/Build-CMake-orange)
+![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey)
+
+---
+
 ## Project Overview
 
-The Employee Management System is a backend REST API application developed using **C++17**, **Crow Framework**, and **SQLite**. It allows users to perform CRUD (Create, Read, Update, Delete) operations on employee records through RESTful APIs.
+The **Employee Management System** is a RESTful backend application developed using **C++17**, **Crow Framework**, and **SQLite3**.
 
-This project was developed as part of an internship assignment to demonstrate backend development, REST API design, database integration, and error handling.
+It provides a complete CRUD (Create, Read, Update, Delete) API for managing employee records while demonstrating REST API development, database integration, routing, validation, and error handling.
+
+This project was developed as part of a backend development internship assignment.
+
+---
+
+# Features
+
+- Create Employee
+- Get All Employees
+- Get Employee by ID
+- Update Employee Details
+- Delete Employee
+- SQLite Database Integration
+- RESTful API Architecture
+- JSON Request & Response
+- Input Validation
+- HTTP Status Code Handling
+- Modular Project Structure
 
 ---
 
@@ -15,20 +41,18 @@ This project was developed as part of an internship assignment to demonstrate ba
 - SQLite3
 - CMake
 - Git
+- Postman
 
 ---
 
-# Features
+# Requirements
 
-- Create Employee
-- View All Employees
-- View Employee by ID
-- Update Employee Details
-- Delete Employee
-- SQLite Database Integration
-- RESTful API Design
-- Input Validation
-- Proper HTTP Error Handling
+Before running the project, make sure the following are installed:
+
+- C++17 Compatible Compiler
+- CMake (3.20 or above)
+- SQLite3
+- Git
 
 ---
 
@@ -48,12 +72,17 @@ This project was developed as part of an internship assignment to demonstrate ba
 
 # Project Structure
 
-```
+```text
 EmployeeManagementSystem/
 │
 ├── database/
+│   └── employee.db
+│
 ├── external/
+│   └── crow/
+│
 ├── include/
+│
 ├── src/
 │   ├── controllers/
 │   ├── database/
@@ -64,8 +93,11 @@ EmployeeManagementSystem/
 │   └── main.cpp
 │
 ├── tests/
+│
 ├── CMakeLists.txt
-└── README.md
+├── database.sql
+├── README.md
+└── Employee Management System.postman_collection.json
 ```
 
 ---
@@ -88,30 +120,48 @@ CREATE TABLE employees(
 
 # Build Instructions
 
-## Configure
+## Clone Repository
+
+```bash
+git clone https://github.com/geekyvatsal95/EmployeeManagementSystem.git
+```
+
+---
+
+## Configure Project
 
 ```bash
 cmake -S . -B build
 ```
 
-## Build
+---
+
+## Build Project
 
 ```bash
 cmake --build build
 ```
 
-## Run
+---
 
-Linux / macOS
+## Run Application
+
+### Windows
+
+```powershell
+.\build\EmployeeManagementSystem.exe
+```
+
+### Linux / macOS
 
 ```bash
 ./build/EmployeeManagementSystem
 ```
 
-Windows
+The server starts on:
 
-```powershell
-.\build\EmployeeManagementSystem.exe
+```
+http://localhost:18080
 ```
 
 ---
@@ -120,22 +170,22 @@ Windows
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
-| POST | `/employees` | Create a new employee |
-| GET | `/employees` | Get all employees |
-| GET | `/employees/{id}` | Get employee by ID |
-| PUT | `/employees/{id}` | Update employee |
-| DELETE | `/employees/{id}` | Delete employee |
+| POST | `/employees` | Create Employee |
+| GET | `/employees` | Get All Employees |
+| GET | `/employees/{id}` | Get Employee by ID |
+| PUT | `/employees/{id}` | Update Employee |
+| DELETE | `/employees/{id}` | Delete Employee |
 
 ---
 
-# Sample Request
+# Sample Create Employee Request
 
 ```json
 {
     "first_name": "Vatsal",
     "last_name": "Mishra",
     "email": "vatsal@gmail.com",
-    "department": "AI",
+    "department": "Backend",
     "salary": 50000,
     "joining_date": "2026-07-21"
 }
@@ -152,7 +202,7 @@ Windows
         "first_name": "Vatsal",
         "last_name": "Mishra",
         "email": "vatsal@gmail.com",
-        "department": "AI",
+        "department": "Backend",
         "salary": 50000,
         "joining_date": "2026-07-21"
     }
@@ -163,10 +213,11 @@ Windows
 
 # Validation Rules
 
-- Employee ID is auto-generated and unique.
-- First Name cannot be empty.
-- Last Name cannot be empty.
-- Email cannot be empty.
+- Employee ID is auto-generated.
+- First Name is required.
+- Last Name is required.
+- Email must be unique.
+- Department is required.
 - Salary must be greater than zero.
 - Joining Date must follow **YYYY-MM-DD** format.
 
@@ -174,12 +225,12 @@ Windows
 
 # HTTP Status Codes
 
-| Status Code | Description |
-|-------------|-------------|
+| Code | Meaning |
+|------|---------|
 | 200 | Success |
-| 201 | Created |
+| 201 | Resource Created |
 | 400 | Bad Request |
-| 404 | Not Found |
+| 404 | Employee Not Found |
 | 500 | Internal Server Error |
 
 ---
@@ -188,9 +239,26 @@ Windows
 
 The REST APIs were tested using:
 
-- Thunder Client (VS Code)
-- Google Chrome
+- Postman
 - SQLite Database
+
+The Postman collection is included in this repository:
+
+```
+Employee Management System.postman_collection.json
+```
+
+---
+
+# Future Improvements
+
+- Authentication & Authorization (JWT)
+- Search & Filter APIs
+- Pagination
+- Logging
+- Unit Testing
+- Docker Support
+- Swagger API Documentation
 
 ---
 
@@ -198,6 +266,9 @@ The REST APIs were tested using:
 
 **Vatsal Mishra**
 
-Software Developer Intern
+Software Developer
 
-HCL Tech
+GitHub: https://github.com/geekyvatsal95
+
+---
+
