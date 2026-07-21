@@ -1,3 +1,0 @@
-C:/Users/omtri/Desktop/EmployeeManagementSystem/build/CMakeFiles/EmployeeManagementSystem.dir
-C:/Users/omtri/Desktop/EmployeeManagementSystem/build/CMakeFiles/edit_cache.dir
-C:/Users/omtri/Desktop/EmployeeManagementSystem/build/CMakeFiles/rebuild_cache.dir

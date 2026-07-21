@@ -1,0 +1,37 @@
+# ==========================
+# Build files
+# ==========================
+build/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+build.ninja
+.ninja_deps
+.ninja_log
+compile_commands.json
+
+# Executables
+*.exe
+*.out
+
+# ==========================
+# SQLite Database
+# ==========================
+*.db
+*.sqlite
+*.sqlite3
+
+
+# ==========================
+# VS Code
+# ==========================
+.vscode/
+
+# ==========================
+# Logs & Temporary Files
+# ==========================
+*.log
+*.tmp
+*.cache
